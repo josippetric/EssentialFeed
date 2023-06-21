@@ -37,43 +37,28 @@ final class RemoteFeedLoaderTests: XCTestCase {
 	
 	func test_load_deliversErrorOnClientError() {
 		let (sut, client) = makeSUT()
-		
-		var capturedErrors = [RemoteFeedLoader.Error]()
-		sut.load {
-			capturedErrors.append($0)
+		expect(sut, toCompleteWithError: .connectivity) {
+			let clientError = NSError(domain: "Test", code: 0)
+			client.complete(with: clientError)
 		}
-		
-		let clientError = NSError(domain: "Test", code: 0)
-		client.complete(with: clientError)
-
-		XCTAssertEqual(capturedErrors, [.connectivity])
 	}
 
 	func test_load_deliversErrorOnNon200HttpResponse() {
 		let (sut, client) = makeSUT()
-		
 		let samples = [199, 201, 300, 400, 401, 404, 500]
 		samples.enumerated().forEach { index, code in
-			var capturedErrors = [RemoteFeedLoader.Error]()
-			sut.load {
-				capturedErrors.append($0)
+			expect(sut, toCompleteWithError: .invalidData) {
+				client.complete(withStatusCode: code, at: index)
 			}
-
-			client.complete(withStatusCode: code, at: index)
-			XCTAssertEqual(capturedErrors, [.invalidData])
 		}
 	}
 
 	func test_load_deliversErrorOn200HttpResponseWithInvalidJson() {
 		let (sut, client) = makeSUT()
-		var capturedErrors = [RemoteFeedLoader.Error]()
-		sut.load {
-			capturedErrors.append($0)
+		expect(sut, toCompleteWithError: .invalidData) {
+			let invalidJson = Data("invalid data".utf8)
+			client.complete(withStatusCode: 200, data: invalidJson)
 		}
-
-		let invalidJson = Data(bytes: "invalid data".utf8)
-		client.complete(withStatusCode: 200, data: invalidJson)
-		XCTAssertEqual(capturedErrors, [.invalidData])
 	}
 
 	// MARK: - Helpers
@@ -82,6 +67,20 @@ final class RemoteFeedLoaderTests: XCTestCase {
 		let client = HTTPClientSpy()
 		let sut = RemoteFeedLoader(url: url, client: client)
 		return (sut, client)
+	}
+
+	private func expect(
+		_ sut: RemoteFeedLoader,
+		toCompleteWithError error: RemoteFeedLoader.Error,
+		when action: () -> Void,
+		file: StaticString = #filePath,
+		line: UInt = #line)
+	{
+		var capturedErrors = [RemoteFeedLoader.Error]()
+		sut.load { capturedErrors.append($0) }
+
+		action()
+		XCTAssertEqual(capturedErrors, [error], file: file, line: line)
 	}
 
 	private class HTTPClientSpy: HTTPClient {
