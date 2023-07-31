@@ -34,38 +34,38 @@ final class ValidateFeedCacheUseCaseTests: XCTestCase {
 		XCTAssertEqual(store.receivedMessages, [.retrieve])
 	}
 
-	func test_validateCache_doesNotdeleteCacheOnLessThenSevenDaysOldCache() {
+	func test_validateCache_doesNotdeleteNonExpiredCache() {
 		let (sut, store) = makeSUT()
 		let feed = uniqueImageFeed()
 		let fixedCurrentDate = Date()
-		let lessThenSevenDaysOldTimestamp = fixedCurrentDate.adding(days: -7).adding(seconds: 1)
+		let nonExpiredTimestamp = fixedCurrentDate.minusFeedCacheMaxAge().adding(seconds: 1)
 		
 		sut.validateCache()
-		store.completeRetrieval(with: feed.local, timestamp: lessThenSevenDaysOldTimestamp)
+		store.completeRetrieval(with: feed.local, timestamp: nonExpiredTimestamp)
 		
 		XCTAssertEqual(store.receivedMessages, [.retrieve])
 	}
 	
-	func test_validateCache_deleteCacheOnSevenDaysOldCache() {
+	func test_validateCache_deleteCacheOnCacheExpiration() {
 		let (sut, store) = makeSUT()
 		let feed = uniqueImageFeed()
 		let fixedCurrentDate = Date()
-		let sevenDaysOldTimestamp = fixedCurrentDate.adding(days: -7)
+		let expirationTimestamp = fixedCurrentDate.minusFeedCacheMaxAge()
 		
 		sut.validateCache()
-		store.completeRetrieval(with: feed.local, timestamp: sevenDaysOldTimestamp)
+		store.completeRetrieval(with: feed.local, timestamp: expirationTimestamp)
 		
 		XCTAssertEqual(store.receivedMessages, [.retrieve, .deleteCacheFeed])
 	}
 	
-	func test_validateCache_deleteCacheOnMoreThenSevenDaysOldCache() {
+	func test_validateCache_deleteCacheOnExpiredCache() {
 		let (sut, store) = makeSUT()
 		let feed = uniqueImageFeed()
 		let fixedCurrentDate = Date()
-		let sevenDaysOldTimestamp = fixedCurrentDate.adding(days: -7).adding(seconds: -1)
+		let expiredTimestamp = fixedCurrentDate.minusFeedCacheMaxAge().adding(seconds: -1)
 		
 		sut.validateCache()
-		store.completeRetrieval(with: feed.local, timestamp: sevenDaysOldTimestamp)
+		store.completeRetrieval(with: feed.local, timestamp: expiredTimestamp)
 		
 		XCTAssertEqual(store.receivedMessages, [.retrieve, .deleteCacheFeed])
 	}
