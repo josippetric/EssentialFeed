@@ -125,6 +125,7 @@ extension FeedStoreSpecs where Self: XCTestCase {
 		return insertionError
 	}
 	
+	@discardableResult
 	func deleteCache(from sut: FeedStore) -> Error? {
 		let exp = expectation(description: "Wait for cache deletion")
 		var deletionError: Error?
