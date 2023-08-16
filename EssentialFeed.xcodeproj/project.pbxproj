@@ -155,6 +155,7 @@
 		F0037D0D2A3ABF9C00FC2268 /* EssentialFeed */ = {
 			isa = PBXGroup;
 			children = (
+				F0E72F712A8D0AE50095610D /* Infrastructure */,
 				F0356FB72A582FBF00E01113 /* FeedCache */,
 				F026C4672A3C8AC20052E736 /* FeedAPI */,
 				F0037D292A3AC11000FC2268 /* FeedFeature */,
@@ -237,8 +238,6 @@
 				F0CD200C2A77D64C00B931D9 /* FeedCachePolicy.swift */,
 				F0C4A3792A7E17D300E2AB57 /* CodableFeedStore.swift */,
 				F0F10E942A7E4A1600F9C30A /* FeedStoreImplementationInbox.md */,
-				F06AB82F2A82A18F00BC6599 /* CoreDataFeedStore.swift */,
-				F04935972A82A4B000253238 /* FeedStore.xcdatamodeld */,
 			);
 			path = FeedCache;
 			sourceTree = "<group>";
@@ -261,6 +260,15 @@
 				F0A63B992A7E6339009B7B09 /* XCTestCase+FailableDeleteFeedStoreSpecs.swift */,
 			);
 			path = FeedStoreSpecs;
+			sourceTree = "<group>";
+		};
+		F0E72F712A8D0AE50095610D /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				F06AB82F2A82A18F00BC6599 /* CoreDataFeedStore.swift */,
+				F04935972A82A4B000253238 /* FeedStore.xcdatamodeld */,
+			);
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 		F0EB21892A657A5C004D0D8D /* Helpers */ = {
