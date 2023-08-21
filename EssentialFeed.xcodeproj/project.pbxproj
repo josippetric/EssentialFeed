@@ -197,6 +197,8 @@
 		F0037D192A3ABF9C00FC2268 /* EssentialFeedTests */ = {
 			isa = PBXGroup;
 			children = (
+				F025344B2A8F38C20065ECB3 /* EssentialFeedCacheIntegrationTests.xctestplan */,
+				F07744C32A4C537700991C0F /* EssentialFeed.xctestplan */,
 				F07744D32A4C662600991C0F /* CI.xctestplan */,
 				F0227F752A49D05C0020E932 /* Helpers */,
 				F01084852A56E684005CF803 /* FeedCache */,
@@ -249,7 +251,6 @@
 		F02534422A8F38AC0065ECB3 /* EssentialFeedCacheIntegrationTests */ = {
 			isa = PBXGroup;
 			children = (
-				F025344B2A8F38C20065ECB3 /* EssentialFeedCacheIntegrationTests.xctestplan */,
 				F02534432A8F38AC0065ECB3 /* EssentialFeedCacheIntegrationTests.swift */,
 			);
 			path = EssentialFeedCacheIntegrationTests;
@@ -283,7 +284,6 @@
 		F07744C92A4C552800991C0F /* EssentialFeedAPIEndToEndTests */ = {
 			isa = PBXGroup;
 			children = (
-				F07744C32A4C537700991C0F /* EssentialFeed.xctestplan */,
 				F07744CA2A4C552800991C0F /* EssentialFeedAPIEndToEndTests.swift */,
 			);
 			path = EssentialFeedAPIEndToEndTests;
