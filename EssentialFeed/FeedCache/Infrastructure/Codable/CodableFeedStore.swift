@@ -53,13 +53,13 @@ public final class CodableFeedStore: FeedStore {
 		let storeURL = storeURL
 		queue.async {
 			guard let data = try? Data(contentsOf: storeURL) else {
-				return completion(.empty)
+				return completion(.success(.none))
 			}
 			
 			do {
 				let decoder = JSONDecoder()
 				let cache = try decoder.decode(Cache.self, from: data)
-				completion(.found(feed: cache.localFeed, timestamp: cache.timestamp))
+				completion(.success(.some((feed: cache.localFeed, timestamp: cache.timestamp))))
 			} catch {
 				completion(.failure(error))
 			}
@@ -75,9 +75,9 @@ public final class CodableFeedStore: FeedStore {
 				let encoded = try encoder.encode(cache)
 				try encoded.write(to: storeURL)
 				
-				completion(nil)
+				completion(.success(()))
 			} catch {
-				completion(error)
+				completion(.failure(error))
 			}
 		}
 	}
@@ -86,13 +86,13 @@ public final class CodableFeedStore: FeedStore {
 		let storeURL = storeURL
 		queue.async(flags: .barrier) {
 			guard FileManager.default.fileExists(atPath: storeURL.path) else {
-				return completion(nil)
+				return completion(.success(()))
 			}
 			do {
 				try FileManager.default.removeItem(at: storeURL)
-				completion(nil)
+				completion(.success(()))
 			} catch {
-				completion(error)
+				completion(.failure(error))
 			}
 		}
 	}
