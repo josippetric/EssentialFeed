@@ -12,12 +12,13 @@ public final class FeedUIComposer {
 	private init() {}
 	
 	public static func feedComposedWith(feedLoader: FeedLoader, imageLoader: FeedImageDataLoader) -> FeedViewController {
-		let refreshController = FeedRefreshViewController(feedLoader: feedLoader)
+		let feedViewModel = FeedViewModel(feedLoader: feedLoader)
+		let refreshController = FeedRefreshViewController(viewModel: feedViewModel)
 		let feedController = FeedViewController(refreshController: refreshController)
 		
 		// The closure here acts as an Adapter pattern since it transforms OR adapts
 		// what refresh controller gives and what feed controller needs
-		refreshController.onRefresh = adaptFeedToCellControllers(
+		feedViewModel.onFeedLoad = adaptFeedToCellControllers(
 			forwardingTo: feedController, loader: imageLoader
 		)
 		return feedController
