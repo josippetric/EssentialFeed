@@ -16,7 +16,7 @@ public final class FeedUIComposer {
 		
 		let feedController = FeedViewController.makeWith(
 			delegate: presentationAdapter,
-			title: FeedPresenter.title)
+			title: FeedPresenter.title )
 		
 		let presenter = FeedPresenter(
 			feedView: FeedViewAdapter(controller: feedController, loader: imageLoader),
