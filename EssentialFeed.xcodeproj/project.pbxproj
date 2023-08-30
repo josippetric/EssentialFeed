@@ -72,6 +72,7 @@
 		F0EB21862A656A3E004D0D8D /* LocalFeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EB21852A656A3E004D0D8D /* LocalFeedImage.swift */; };
 		F0EB21882A657949004D0D8D /* LoadFeedFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EB21872A657949004D0D8D /* LoadFeedFromCacheUseCaseTests.swift */; };
 		F0EB218B2A657A6B004D0D8D /* FeedStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EB218A2A657A6B004D0D8D /* FeedStoreSpy.swift */; };
+		F0F1F10D2A9F036F006CB87B /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F1F10C2A9F036F006CB87B /* MainQueueDispatchDecorator.swift */; };
 		F0F2FD212A7E62AA006ED44C /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F2FD202A7E62AA006ED44C /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift */; };
 /* End PBXBuildFile section */
 
@@ -204,6 +205,7 @@
 		F0EB21872A657949004D0D8D /* LoadFeedFromCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadFeedFromCacheUseCaseTests.swift; path = EssentialFeedTests/FeedAPI/LoadFeedFromCacheUseCaseTests.swift; sourceTree = SOURCE_ROOT; };
 		F0EB218A2A657A6B004D0D8D /* FeedStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStoreSpy.swift; sourceTree = "<group>"; };
 		F0F10E942A7E4A1600F9C30A /* FeedStoreImplementationInbox.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = FeedStoreImplementationInbox.md; sourceTree = "<group>"; };
+		F0F1F10C2A9F036F006CB87B /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
 		F0F2FD202A7E62AA006ED44C /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FailableRetrieveFeedStoreSpecs.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -486,6 +488,7 @@
 			isa = PBXGroup;
 			children = (
 				F0CFED4F2A974CB900689AA2 /* FeedUIComposer.swift */,
+				F0F1F10C2A9F036F006CB87B /* MainQueueDispatchDecorator.swift */,
 			);
 			path = Composers;
 			sourceTree = "<group>";
@@ -857,6 +860,7 @@
 				F0CFED5B2A97958100689AA2 /* FeedImagePresenter.swift in Sources */,
 				F01586372A95034B00C16172 /* FeedViewController.swift in Sources */,
 				F0CFED592A977A1700689AA2 /* FeedPresenter.swift in Sources */,
+				F0F1F10D2A9F036F006CB87B /* MainQueueDispatchDecorator.swift in Sources */,
 				F0CFED552A9764F700689AA2 /* FeedImageViewModel.swift in Sources */,
 				F046DCEA2A9DCF0900FA1E53 /* UIImageView+Extensions.swift in Sources */,
 				F0CFED4D2A97485600689AA2 /* FeedImageCellController.swift in Sources */,
