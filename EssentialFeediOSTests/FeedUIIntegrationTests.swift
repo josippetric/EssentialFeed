@@ -286,6 +286,14 @@ final class FeedUIIntegrationTests: XCTestCase {
 		}
 		wait(for: [exp], timeout: 1.0)
 	}
+
+	func test_errorView_doesNotRenderErrorOnLoad() {
+		let (sut, _) = makeSUT()
+		
+		sut.loadViewIfNeeded()
+		
+		XCTAssertEqual(sut.errorMessage, nil)
+	}
 	
 	// MARK: - Helpers
 	
@@ -390,6 +398,10 @@ private extension FeedViewController {
 
 	var isShowingLoadingIndicator: Bool {
 		return refreshControl?.isRefreshing == true
+	}
+	
+	var errorMessage: String? {
+		return errorView.message
 	}
 	
 	@discardableResult
