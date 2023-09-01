@@ -217,6 +217,7 @@
 		F0F1F1152A9F0471006CB87B /* FeedImageDataLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
 		F0F2FD202A7E62AA006ED44C /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FailableRetrieveFeedStoreSpecs.swift"; sourceTree = "<group>"; };
 		F0F97A372AA204C70017A1BE /* FeedPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenterTests.swift; sourceTree = "<group>"; };
+		F0F97A3B2AA20C330017A1BE /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Feed.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -745,6 +746,7 @@
 				en,
 				Base,
 				"pt-PT",
+				el,
 			);
 			mainGroup = F0037D012A3ABF9B00FC2268;
 			productRefGroup = F0037D0C2A3ABF9C00FC2268 /* Products */;
@@ -967,6 +969,7 @@
 			children = (
 				F046DCF02A9DDEAC00FA1E53 /* en */,
 				F046DCF22A9DDF0700FA1E53 /* pt-PT */,
+				F0F97A3B2AA20C330017A1BE /* el */,
 			);
 			name = Feed.strings;
 			sourceTree = "<group>";

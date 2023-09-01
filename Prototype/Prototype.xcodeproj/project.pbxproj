@@ -28,6 +28,8 @@
 		F02E99FF2A93C304008529AC /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		F02E9A012A93C480008529AC /* FeddImageViewModel+PrototypeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeddImageViewModel+PrototypeData.swift"; sourceTree = "<group>"; };
 		F02E9A032A93C73E008529AC /* FeedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCell.swift; sourceTree = "<group>"; };
+		F0F97A392AA20C330017A1BE /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Main.strings; sourceTree = "<group>"; };
+		F0F97A3A2AA20C330017A1BE /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			knownRegions = (
 				en,
 				Base,
+				el,
 			);
 			mainGroup = F02E99D92A93BE0B008529AC;
 			productRefGroup = F02E99E32A93BE0B008529AC /* Products */;
@@ -159,6 +162,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F02E99EC2A93BE0B008529AC /* Base */,
+				F0F97A392AA20C330017A1BE /* el */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -167,6 +171,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F02E99F12A93BE0C008529AC /* Base */,
+				F0F97A3A2AA20C330017A1BE /* el */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
