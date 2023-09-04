@@ -25,13 +25,24 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYf-q1-KWv">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="34"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <connections>
+                                        <action selector="hideMessageAnimated" destination="VqC-GQ-Pkd" eventType="touchUpInside" id="cgr-hB-zEQ"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" red="1" green="0.41759261489999999" blue="0.4154433012" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="xA6-e0-qzp" secondAttribute="trailing" id="KWk-0K-doe"/>
+                                <constraint firstItem="dYf-q1-KWv" firstAttribute="leading" secondItem="VqC-GQ-Pkd" secondAttribute="leading" id="MUw-ke-m0F"/>
+                                <constraint firstAttribute="trailing" secondItem="dYf-q1-KWv" secondAttribute="trailing" id="Rbf-KJ-r0i"/>
                                 <constraint firstAttribute="bottom" secondItem="xA6-e0-qzp" secondAttribute="bottom" constant="8" id="SkF-uP-icT"/>
                                 <constraint firstItem="xA6-e0-qzp" firstAttribute="top" secondItem="VqC-GQ-Pkd" secondAttribute="top" constant="8" id="UFO-iJ-P3w"/>
+                                <constraint firstAttribute="bottom" secondItem="dYf-q1-KWv" secondAttribute="bottom" id="YLa-4d-9BQ"/>
                                 <constraint firstItem="xA6-e0-qzp" firstAttribute="leading" secondItem="VqC-GQ-Pkd" secondAttribute="leading" id="wyt-ii-bPG"/>
+                                <constraint firstItem="dYf-q1-KWv" firstAttribute="top" secondItem="VqC-GQ-Pkd" secondAttribute="top" id="xXh-mv-yAY"/>
                             </constraints>
                             <connections>
                                 <outlet property="label" destination="xA6-e0-qzp" id="XlP-7A-OxE"/>
