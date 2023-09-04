@@ -173,6 +173,9 @@
                             <action selector="refresh" destination="KyJ-JJ-WX1" eventType="valueChanged" id="zWf-5p-Djx"/>
                         </connections>
                     </refreshControl>
+                    <connections>
+                        <outlet property="errorView" destination="VqC-GQ-Pkd" id="WoW-7o-jUr"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QS6-EX-xFi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
