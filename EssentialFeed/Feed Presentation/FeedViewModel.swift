@@ -1,13 +1,12 @@
 //
 //  FeedViewModel.swift
-//  EssentialFeediOS
+//  EssentialFeed
 //
 //  Created by Josip Petric on 04.09.2023..
 //
 
 import Foundation
-import EssentialFeed
 
-struct FeedViewModel {
-	let feed: [FeedImage]
+public struct FeedViewModel {
+	public let feed: [FeedImage]
 }
