@@ -7,6 +7,12 @@
 
 import Foundation
 
+struct FeedImageViewModel {
+	let description: String?
+	let location: String?
+	let imageName: String
+}
+
 extension FeedImageViewModel {
 	static var prototypeFeed: [FeedImageViewModel] {
 		return [
