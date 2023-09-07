@@ -13,7 +13,7 @@ public final class RemoteFeedImageDataLoader: FeedImageDataLoader {
 		case connectivity
 	}
 	
-	private final class HTTPTaskWrapper: FeedImageDataLoaderTask {
+	private final class HTTPTaskWrapper: LoadImageDataTask {
 		private var completion: ((FeedImageDataLoader.Result) -> Void)?
 
 		var wrapped: HTTPClientTask?
@@ -42,7 +42,7 @@ public final class RemoteFeedImageDataLoader: FeedImageDataLoader {
 		self.client = client
 	}
 	
-	public func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> FeedImageDataLoaderTask {
+	public func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> LoadImageDataTask {
 		let task = HTTPTaskWrapper(completion)
 		
 		task.wrapped = client.get(from: url) { [weak self] result in

@@ -466,8 +466,8 @@
 				F0EB21852A656A3E004D0D8D /* LocalFeedImage.swift */,
 				F0CD200C2A77D64C00B931D9 /* FeedCachePolicy.swift */,
 				F0F10E942A7E4A1600F9C30A /* FeedStoreImplementationInbox.md */,
-				F0DBCC572AAA143A00DB580F /* FeedImageDataStore.swift */,
 				F0DBCC5A2AAA145D00DB580F /* LocalFeedImageDataLoader.swift */,
+				F0DBCC572AAA143A00DB580F /* FeedImageDataStore.swift */,
 			);
 			path = FeedCache;
 			sourceTree = "<group>";

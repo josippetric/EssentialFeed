@@ -8,14 +8,29 @@
 import Foundation
 
 public final class LocalFeedImageDataLoader {
-	private final class Task: FeedImageDataLoaderTask {
-		private var completion: ((FeedImageDataLoader.Result) -> Void)?
+	private let store: FeedImageDataStore
+	
+	public init(store: FeedImageDataStore) {
+		self.store = store
+	}
+}
+
+extension LocalFeedImageDataLoader: FeedImageDataLoader {
+	public typealias LoadResult = FeedImageDataLoader.Result
+	
+	public enum LoadError: Swift.Error {
+		case failed
+		case notFound
+	}
+	
+	private final class Task: LoadImageDataTask {
+		private var completion: ((LoadResult) -> Void)?
 		
-		init(completion: @escaping (FeedImageDataLoader.Result) -> Void) {
+		init(completion: @escaping (LoadResult) -> Void) {
 			self.completion = completion
 		}
 		
-		func complete(with result: FeedImageDataLoader.Result) {
+		func complete(with result: LoadResult) {
 			completion?(result)
 		}
 		
@@ -28,30 +43,21 @@ public final class LocalFeedImageDataLoader {
 		}
 	}
 	
-	public enum Error: Swift.Error {
-		case failed
-		case notFound
-	}
-	
-	private let store: FeedImageDataStore
-	
-	public init(store: FeedImageDataStore) {
-		self.store = store
-	}
-	
-	public func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> FeedImageDataLoaderTask {
+	public func loadImageData(from url: URL, completion: @escaping (LoadResult) -> Void) -> LoadImageDataTask {
 		let task = Task(completion: completion)
 		store.retrieve(dataForURL: url, completion: { [weak self] result in
 			guard self != nil else { return }
-
+			
 			task.complete(with: result
-				.mapError({ _ in Error.failed })
-				.flatMap({ data in data.map { .success($0) } ?? .failure(Error.notFound) })
+				.mapError({ _ in LoadError.failed })
+				.flatMap({ data in data.map { .success($0) } ?? .failure(LoadError.notFound) })
 			)
 		})
 		return task
 	}
-	
+}
+
+extension LocalFeedImageDataLoader {
 	public typealias SaveResult = Result<Void, Swift.Error>
 	
 	public func save(data: Data, for url: URL, completion: @escaping (SaveResult) -> Void) {
