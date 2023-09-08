@@ -9,10 +9,20 @@ import Foundation
 
 extension CoreDataFeedStore: FeedImageDataStore {
 	public func retrieve(dataForURL url: URL, completion: @escaping (FeedImageDataStore.RetrievalResult) -> Void) {
-		completion(.success(.none))
+		perform { context in
+			completion(Result(catching: {
+				return try ManagedFeedImage.first(with: url, in: context)?.data
+			}))
+		}
 	}
 	
 	public func insert(data: Data, for url: URL, completion: @escaping (FeedImageDataStore.InsertionResult) -> Void) {
-		
+		perform { context in
+			completion(Result(catching: {
+				let image = try ManagedFeedImage.first(with: url, in: context)
+				image?.data = data
+				try context.save()
+			}))
+		}
 	}
 }
