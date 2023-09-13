@@ -52,6 +52,7 @@
 		F0AEB6EE2AB1708C00A530D1 /* EssentialAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0AEB6F72AB170B000A530D1 /* FeedLoaderWithFallbackCompositeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderWithFallbackCompositeTests.swift; sourceTree = "<group>"; };
 		F0AEB6F92AB1A93700A530D1 /* FeedLoaderWithFallbackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderWithFallbackComposite.swift; sourceTree = "<group>"; };
+		F0AEB6FB2AB1ACA300A530D1 /* EssentialApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = EssentialApp.xctestplan; path = /Users/jpetric/Development/Learning/iosdeveloperessential/EssentialFeed/EssentialApp/EssentialAppTests/EssentialApp.xctestplan; sourceTree = "<absolute>"; };
 		F0C03EF62AAB188C00751309 /* EssentialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EssentialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0C03EF92AAB188C00751309 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0C03EFB2AAB188C00751309 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +95,7 @@
 		F0AEB6EF2AB1708C00A530D1 /* EssentialAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				F0AEB6FB2AB1ACA300A530D1 /* EssentialApp.xctestplan */,
 				F0AEB6F72AB170B000A530D1 /* FeedLoaderWithFallbackCompositeTests.swift */,
 			);
 			path = EssentialAppTests;
