@@ -8,15 +8,26 @@
 import XCTest
 import EssentialFeed
 
+protocol FeedImageDataCache {
+	typealias SaveResult = Result<Void, Error>
+
+	func save(data: Data, for url: URL, completion: @escaping (SaveResult) -> Void)
+}
+
 class FeedImageDataCacheDecorator: FeedImageDataLoader {
 	private let decoratee: FeedImageDataLoader
+	private let cache: FeedImageDataCache
 	
-	init(decoratee: FeedImageDataLoader) {
+	init(decoratee: FeedImageDataLoader, cache: FeedImageDataCache) {
 		self.decoratee = decoratee
+		self.cache = cache
 	}
 	
 	func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> LoadImageDataTask {
-		return decoratee.loadImageData(from: url, completion: completion)
+		return decoratee.loadImageData(from: url) { [weak self] result in
+			self?.cache.save(data: (try? result.get()) ?? Data(), for: url, completion: { _ in })
+			completion(result)
+		}
 	}
 }
 
@@ -55,13 +66,37 @@ final class FeedImageDataCacheDecoratorTests: XCTestCase, FeedImageDataLoaderTes
 		}
 	}
 	
+	func test_loadImageData_cachesLoadedDataOnLoaderSuccess() {
+		let cache = CacheSpy()
+		let url = anyURL()
+		let imageData = anyData()
+		let (sut, loader) = makeSUT(cache: cache)
+		
+		_ = sut.loadImageData(from: url) { _ in }
+		loader.complete(with: imageData)
+		
+		XCTAssertEqual(cache.messages, [.save(data: imageData, for: url)])
+	}
+	
    // MARK: - Helpers
 	
-	private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (sut: FeedImageDataLoader, loader: FeedImageDataLoaderSpy) {
+	private func makeSUT(cache: CacheSpy = .init(), file: StaticString = #filePath, line: UInt = #line) -> (sut: FeedImageDataLoader, loader: FeedImageDataLoaderSpy) {
 		let loader = FeedImageDataLoaderSpy()
-		let sut = FeedImageDataCacheDecorator(decoratee: loader)
+		let sut = FeedImageDataCacheDecorator(decoratee: loader, cache: cache)
 		trackForMemoryLeaks(loader)
 		trackForMemoryLeaks(sut)
 		return (sut, loader)
+	}
+	
+	private class CacheSpy: FeedImageDataCache {
+		private(set) var messages = [Message]()
+		
+		enum Message: Equatable {
+			case save(data: Data, for: URL)
+		}
+		
+		func save(data: Data, for url: URL, completion: @escaping (SaveResult) -> Void) {
+			messages.append(.save(data: data, for: url))
+		}
 	}
 }
