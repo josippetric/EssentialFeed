@@ -22,11 +22,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		guard let _ = (scene as? UIWindowScene) else { return }
 		
 //		// Setting up remote loaders
-//		let remoteURL = URL(string: "https://ile-api.essentialdeveloper.com/essential-feed/v1/feed")!
-//		let remoteClient = URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
-//		let remoteFeedLoader = RemoteFeedLoader(url: remoteURL, client: remoteClient)
-//		let remoteImageDataLoader = RemoteFeedImageDataLoader(client: remoteClient)
-//		
+		let remoteURL = URL(string: "https://ile-api.essentialdeveloper.com/essential-feed/v1/feed")!
+		let remoteClient = URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
+		let remoteFeedLoader = RemoteFeedLoader(url: remoteURL, client: remoteClient)
+		let remoteImageDataLoader = RemoteFeedImageDataLoader(client: remoteClient)
+//
 //		// Setting up local loaders
 //		let localStoreURL = NSPersistentContainer
 //			.defaultDirectoryURL()
@@ -34,8 +34,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //		let localStore = try! CoreDataFeedStore(storeURL: localStoreURL)
 //		let localFeedLoader = LocalFeedLoader(store: localStore, currentDate: Date.init)
 //		let localImageDataLoader = LocalFeedImageDataLoader(store: localStore)
-//		
-//		
+//
+//
 //		let feedViewController = FeedUIComposer.feedComposedWith(
 //			feedLoader: FeedLoaderWithFallbackComposite(
 //				primary: FeedLoaderCacheDecorator(
@@ -49,8 +49,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //					cache: localImageDataLoader)
 //			)
 //		)
-//		
-//		window?.rootViewController = feedViewController
+//
+		let feedViewController = FeedUIComposer.feedComposedWith(
+			feedLoader: remoteFeedLoader,
+			imageLoader: remoteImageDataLoader)
+		window?.rootViewController = feedViewController
 	}
 }
 

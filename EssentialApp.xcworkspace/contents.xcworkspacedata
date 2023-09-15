@@ -10,4 +10,7 @@
    <FileRef
       location = "group:/Users/jpetric/Development/Learning/iosdeveloperessential/EssentialFeed/EssentialApp/EssentialAppTests/EssentialApp.xctestplan">
    </FileRef>
+   <FileRef
+      location = "group:/Users/jpetric/Development/Learning/iosdeveloperessential/EssentialFeed/EssentialApp/EssentialAppTests/EssentialAppUIAcceptanceTests.xctestplan">
+   </FileRef>
 </Workspace>
