@@ -21,36 +21,36 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		// This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 		guard let _ = (scene as? UIWindowScene) else { return }
 		
-		// Setting up remote loaders
-		let remoteURL = URL(string: "https://ile-api.essentialdeveloper.com/essential-feed/v1/feed")!
-		let remoteClient = URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
-		let remoteFeedLoader = RemoteFeedLoader(url: remoteURL, client: remoteClient)
-		let remoteImageDataLoader = RemoteFeedImageDataLoader(client: remoteClient)
-		
-		// Setting up local loaders
-		let localStoreURL = NSPersistentContainer
-			.defaultDirectoryURL()
-			.appendingPathComponent("feed-store.sqlite")
-		let localStore = try! CoreDataFeedStore(storeURL: localStoreURL)
-		let localFeedLoader = LocalFeedLoader(store: localStore, currentDate: Date.init)
-		let localImageDataLoader = LocalFeedImageDataLoader(store: localStore)
-		
-		
-		let feedViewController = FeedUIComposer.feedComposedWith(
-			feedLoader: FeedLoaderWithFallbackComposite(
-				primary: FeedLoaderCacheDecorator(
-					decoratee: remoteFeedLoader,
-					cache: localFeedLoader),
-				fallback: localFeedLoader),
-			imageLoader: FeedImageDataLoaderWithFallbackComposite(
-				primary: localImageDataLoader,
-				fallback: FeedImageDataCacheDecorator(
-					decoratee: remoteImageDataLoader,
-					cache: localImageDataLoader)
-			)
-		)
-		
-		window?.rootViewController = feedViewController
+//		// Setting up remote loaders
+//		let remoteURL = URL(string: "https://ile-api.essentialdeveloper.com/essential-feed/v1/feed")!
+//		let remoteClient = URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
+//		let remoteFeedLoader = RemoteFeedLoader(url: remoteURL, client: remoteClient)
+//		let remoteImageDataLoader = RemoteFeedImageDataLoader(client: remoteClient)
+//		
+//		// Setting up local loaders
+//		let localStoreURL = NSPersistentContainer
+//			.defaultDirectoryURL()
+//			.appendingPathComponent("feed-store.sqlite")
+//		let localStore = try! CoreDataFeedStore(storeURL: localStoreURL)
+//		let localFeedLoader = LocalFeedLoader(store: localStore, currentDate: Date.init)
+//		let localImageDataLoader = LocalFeedImageDataLoader(store: localStore)
+//		
+//		
+//		let feedViewController = FeedUIComposer.feedComposedWith(
+//			feedLoader: FeedLoaderWithFallbackComposite(
+//				primary: FeedLoaderCacheDecorator(
+//					decoratee: remoteFeedLoader,
+//					cache: localFeedLoader),
+//				fallback: localFeedLoader),
+//			imageLoader: FeedImageDataLoaderWithFallbackComposite(
+//				primary: localImageDataLoader,
+//				fallback: FeedImageDataCacheDecorator(
+//					decoratee: remoteImageDataLoader,
+//					cache: localImageDataLoader)
+//			)
+//		)
+//		
+//		window?.rootViewController = feedViewController
 	}
 }
 
