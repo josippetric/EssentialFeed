@@ -7,6 +7,7 @@
 
 import UIKit
 import EssentialFeed
+import EssentialFeediOS
 
 final class FeedViewAdapter: FeedView {
 	private weak var controller: FeedViewController?
@@ -18,7 +19,7 @@ final class FeedViewAdapter: FeedView {
 	}
 	
 	func display(_ viewModel: FeedViewModel) {
-		controller?.tableModel = viewModel.feed.map {
+		controller?.display(viewModel.feed.map {
 			let adapter = FeedImageDataLoaderPresentationAdapter<WeakRefVirtualProxy<FeedImageCellController>, UIImage>(
 				model: $0, imageLoader: loader
 			)
@@ -28,6 +29,6 @@ final class FeedViewAdapter: FeedView {
 				imageTransformer: UIImage.init
 			)
 			return view
-		}
+		})
 	}
 }
