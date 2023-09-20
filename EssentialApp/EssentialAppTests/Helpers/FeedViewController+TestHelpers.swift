@@ -52,6 +52,10 @@ extension FeedViewController {
 		ds?.tableView?(tableView, cancelPrefetchingForRowsAt: [index])
 	}
 	
+	func renderedFeedImageData(at index: Int) -> Data? {
+		simulateFeedImageViewVisible(at: index)?.renderedImage
+	}
+	
 	func numberOfRenderedFeedImageViews() -> Int {
 		return tableView.numberOfRows(inSection: feedImageSection)
 	}
