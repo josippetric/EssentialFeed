@@ -36,13 +36,13 @@ jobs:
       with:
         xcode-version: '14.2.0'
 
-    - name: Build
-      run: xcodebuild clean archive -sdk iphoneos -workspace EssentialApp.xcworkspace -configuration "Release" -scheme "EssentialApp" -derivedDataPath "DerivedData" -archivePath "DerivedData/Archive/EssentialApp.xcarchive"
-  
     - name: Set build number
       run: |
         buildNumber=$(($GITHUB_RUN_NUMBER + 1))
         /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $buildNumber" "EssentialApp/EssentialApp/Info.plist"
+
+    - name: Build
+      run: xcodebuild clean archive -sdk iphoneos -workspace EssentialApp.xcworkspace -configuration "Release" -scheme "EssentialApp" -derivedDataPath "DerivedData" -archivePath "DerivedData/Archive/EssentialApp.xcarchive"
     
     - name: Export
       run: xcodebuild -exportArchive -archivePath DerivedData/Archive/EssentialApp.xcarchive -exportOptionsPlist .github/deployment/ExportOptions.plist -exportPath DerivedData/ipa

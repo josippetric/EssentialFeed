@@ -413,7 +413,8 @@
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = XGHG354FH3;
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = XGHG354FH3;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = EssentialApp/info.plist;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.quantumitservices.myCircle.EssentialAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -436,7 +437,8 @@
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = XGHG354FH3;
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = XGHG354FH3;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = EssentialApp/info.plist;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.quantumitservices.learning.EssentialAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
