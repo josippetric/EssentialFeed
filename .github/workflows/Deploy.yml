@@ -34,7 +34,7 @@ jobs:
         security set-key-partition-list -S apple-tool:,apple: -s -k "" ~/Library/Keychains/build.keychain
     - uses: maxim-lobanov/setup-xcode@v1
       with:
-        xcode-version: '14.3'
+        xcode-version: '14.2.0'
 
     - name: Set build number
       run: /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $GITHUB_RUN_NUMBER" "EssentialApp/EssentialApp/Info.plist"
