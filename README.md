@@ -1,6 +1,6 @@
 # Essential App
 
-[![CI_iOS](https://github.com/josippetric/EssentialFeed/actions/workflows/CI_iOS.yml/badge.svg)](https://github.com/josippetric/EssentialFeed/actions/workflows/CI_iOS.yml) [![CI_macOS](https://github.com/josippetric/EssentialFeed/actions/workflows/CI_macOS.yml/badge.svg)](https://github.com/josippetric/EssentialFeed/actions/workflows/CI_macOS.yml)
+[![CI_iOS](https://github.com/josippetric/EssentialFeed/actions/workflows/CI_iOS.yml/badge.svg)](https://github.com/josippetric/EssentialFeed/actions/workflows/CI_iOS.yml) [![CI_macOS](https://github.com/josippetric/EssentialFeed/actions/workflows/CI_macOS.yml/badge.svg)](https://github.com/josippetric/EssentialFeed/actions/workflows/CI_macOS.yml) [![Deploy](https://github.com/josippetric/EssentialFeed/actions/workflows/Deploy.yml/badge.svg)](https://github.com/josippetric/EssentialFeed/actions/workflows/Deploy.yml)
 
 
 ## Image Feed Feature Specs
