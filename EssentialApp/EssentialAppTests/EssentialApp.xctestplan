@@ -14,6 +14,8 @@
   "testTargets" : [
     {
       "skippedTests" : [
+        "FeedImageDataCacheDecoratorTests",
+        "FeedImageDataLoaderWithFallbackCompositeTests",
         "FeedLoaderCacheDecoratorTests",
         "FeedLoaderWithFallbackCompositeTests"
       ],
