@@ -13,6 +13,10 @@
   },
   "testTargets" : [
     {
+      "skippedTests" : [
+        "FeedLoaderCacheDecoratorTests",
+        "FeedLoaderWithFallbackCompositeTests"
+      ],
       "target" : {
         "containerPath" : "container:EssentialApp\/EssentialApp.xcodeproj",
         "identifier" : "F0AEB6ED2AB1708C00A530D1",

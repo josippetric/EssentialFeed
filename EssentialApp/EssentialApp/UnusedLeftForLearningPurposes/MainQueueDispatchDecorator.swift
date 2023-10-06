@@ -5,6 +5,8 @@
 //  Created by Josip Petric on 30.08.2023..
 //
 
+// The file is not used, but is left here for the future reference and learning purposes
+
 import Foundation
 import EssentialFeed
 
