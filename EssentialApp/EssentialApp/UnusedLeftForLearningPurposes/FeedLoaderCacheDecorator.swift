@@ -5,7 +5,8 @@
 //  Created by Josip Petric on 14.09.2023..
 //
 
-import Foundation
+// The file is not used, but is left here for the future reference and learning purposes
+
 import EssentialFeed
 
 public class FeedLoaderCacheDecorator: FeedLoader {
@@ -27,7 +28,7 @@ public class FeedLoaderCacheDecorator: FeedLoader {
 	}
 }
 
-private extension FeedCache {
+public extension FeedCache {
 	func saveIgnoringResult(_ feed: [FeedImage]) {
 		save(feed, completion: { _ in })
 	}
