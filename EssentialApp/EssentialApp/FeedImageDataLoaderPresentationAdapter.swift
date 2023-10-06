@@ -11,7 +11,7 @@ import EssentialFeediOS
 
 final class FeedImageDataLoaderPresentationAdapter<View: FeedImageView, Image>: FeedImageCellControllerDelegate where View.Image == Image {
 	
-	private var task: LoadImageDataTask?
+	private var task: FeedImageDataLoaderTask?
 	private let model: FeedImage
 	private var imageLoader: FeedImageDataLoader
 	
