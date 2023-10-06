@@ -168,6 +168,8 @@
 		F098BFCC2ACFC54200918508 /* UnusedLeftForLearningPurposes */ = {
 			isa = PBXGroup;
 			children = (
+				F029275A2AB305EA00CC5D33 /* FeedImageDataCacheDecorator.swift */,
+				F02927402AB2BD4500CC5D33 /* FeedImageDataLoaderWithFallbackComposite.swift */,
 				F0AEB6F92AB1A93700A530D1 /* FeedLoaderWithFallbackComposite.swift */,
 				F02927502AB2F1D300CC5D33 /* FeedLoaderCacheDecorator.swift */,
 				F0A3A7F82AB959DB0049D8AB /* MainQueueDispatchDecorator.swift */,
@@ -178,8 +180,10 @@
 		F098BFCD2ACFC59F00918508 /* UnusedLeftForLearningPurposes */ = {
 			isa = PBXGroup;
 			children = (
+				F0AEB6FC2AB1C69B00A530D1 /* FeedImageDataLoaderWithFallbackComposite.swift */,
 				F02927472AB2E2B300CC5D33 /* FeedLoaderCacheDecoratorTests.swift */,
 				F0AEB6F72AB170B000A530D1 /* FeedLoaderWithFallbackCompositeTests.swift */,
+				F02927522AB2FCA900CC5D33 /* FeedImageDataCacheDecoratorTests.swift */,
 			);
 			path = UnusedLeftForLearningPurposes;
 			sourceTree = "<group>";
@@ -200,8 +204,6 @@
 				F0A3A80F2AB964C70049D8AB /* EssentialApp.xctestplan */,
 				F02927422AB2BDC100CC5D33 /* Helpers */,
 				F0A3A7E12AB9550B0049D8AB /* SceneDelegateTests.swift */,
-				F0AEB6FC2AB1C69B00A530D1 /* FeedImageDataLoaderWithFallbackComposite.swift */,
-				F02927522AB2FCA900CC5D33 /* FeedImageDataCacheDecoratorTests.swift */,
 				F0A3A8002AB95A420049D8AB /* FeedUIIntegrationTests.swift */,
 				F0A3A8032AB95C920049D8AB /* FeedAcceptanceTests.swift */,
 				F0C4101D2ABBFAD100C6C3A2 /* FeedUIIntegrationTests.swift */,
@@ -238,8 +240,6 @@
 				F0C03F022AAB188E00751309 /* Assets.xcassets */,
 				F0C03F042AAB188E00751309 /* LaunchScreen.storyboard */,
 				F0C03F072AAB188E00751309 /* Info.plist */,
-				F02927402AB2BD4500CC5D33 /* FeedImageDataLoaderWithFallbackComposite.swift */,
-				F029275A2AB305EA00CC5D33 /* FeedImageDataCacheDecorator.swift */,
 				F0A3A7F32AB959DB0049D8AB /* FeedImageDataLoaderPresentationAdapter.swift */,
 				F0A3A7F72AB959DB0049D8AB /* FeedLoaderPresentationAdapter.swift */,
 				F0A3A7F62AB959DB0049D8AB /* FeedUIComposer.swift */,
