@@ -16,14 +16,14 @@ class FeedImageDataLoaderSpy: FeedImageDataLoader {
 		return messages.map { $0.url }
 	}
 	
-	private struct Task: LoadImageDataTask {
+	private struct Task: FeedImageDataLoaderTask {
 		let callback: () -> Void
 		func cancel() {
 			callback()
 		}
 	}
 	
-	func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> LoadImageDataTask {
+	func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> FeedImageDataLoaderTask {
 		messages.append((url, completion))
 		return Task { [weak self] in
 			self?.cancelledURLs.append(url)
