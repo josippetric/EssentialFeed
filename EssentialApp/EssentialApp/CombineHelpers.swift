@@ -83,7 +83,18 @@ extension Publisher {
 }
 
 extension DispatchQueue {
-	
+	/*
+	It is important to point out that the Main Thread and the Main Dispatch Queue are not the same things.
+	The Dispatch framework can guarantee that work dispatched to the main queue will run on the main thread. But it doesn’t guarantee the thread it will execute work dispatched to any other queue.
+
+	That’s because the framework is optimized to reuse threads as much as possible. So if the main thread is available, for example, the framework may decide to run a background queue on the main thread.
+
+	Most of the time, checking Thread.isMainThread is enough to safely perform UI updates. But some frameworks like MapKit expect execution on the 'main dispatch queue', not just the 'main thread'.
+
+	In this case, it isn’t enough to guarantee execution is on the main thread (because the main thread could, in fact, be running background queue work!).
+
+	The solution is to ensure that execution is running on the 'main queue', which also guarantees it’s running on the main thread. You can do so using the setSpecific and getSpecific APIs on DispatchQueue
+	 */
 	static var immediateWhenOnMainQueueScheduler: ImmediateWhenOnMainScheduler {
 		ImmediateWhenOnMainScheduler.shared
 	}
