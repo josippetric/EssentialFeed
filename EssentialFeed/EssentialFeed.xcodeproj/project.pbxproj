@@ -427,11 +427,11 @@
 		F026C4672A3C8AC20052E736 /* FeedAPI */ = {
 			isa = PBXGroup;
 			children = (
+				F09D585F2AD3DA0100D7FBF6 /* Infrastructure */,
 				F0DC1BF62AA9A7400078C77E /* Helpers */,
 				F026C4682A3C8AE80052E736 /* RemoteFeedLoader.swift */,
 				F017E7A42A43669800644EA4 /* FeedItemsMapper.swift */,
 				F017E7A12A43665B00644EA4 /* HTTPClient.swift */,
-				F0227F782A49E3E20020E932 /* URLSessionHTTPClient.swift */,
 				F0EB21832A6569F4004D0D8D /* RemoteFeedItem.swift */,
 				F08069872AA98BF7009ED8B2 /* RemoteFeedImageDataLoader.swift */,
 			);
@@ -494,6 +494,14 @@
 				F0A63B992A7E6339009B7B09 /* XCTestCase+FailableDeleteFeedStoreSpecs.swift */,
 			);
 			path = FeedStoreSpecs;
+			sourceTree = "<group>";
+		};
+		F09D585F2AD3DA0100D7FBF6 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				F0227F782A49E3E20020E932 /* URLSessionHTTPClient.swift */,
+			);
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 		F0A0E9FA2ABC302300A06FB3 /* Helpers */ = {
