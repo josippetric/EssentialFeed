@@ -324,8 +324,8 @@
 			isa = PBXGroup;
 			children = (
 				F07486B02AA5D96A00916310 /* Feed Presentation */,
-				F0356FB72A582FBF00E01113 /* FeedCache */,
-				F026C4672A3C8AC20052E736 /* FeedAPI */,
+				F0356FB72A582FBF00E01113 /* Feed Cache */,
+				F026C4672A3C8AC20052E736 /* Feed API */,
 				F0037D292A3AC11000FC2268 /* Feed Feature */,
 				F09FE2BD2AD7A70900AEE3CB /* Image Comments Feature */,
 				F0037D0E2A3ABF9C00FC2268 /* EssentialFeed.h */,
@@ -434,7 +434,7 @@
 			path = EssentialFeedCacheIntegrationTests;
 			sourceTree = "<group>";
 		};
-		F026C4672A3C8AC20052E736 /* FeedAPI */ = {
+		F026C4672A3C8AC20052E736 /* Feed API */ = {
 			isa = PBXGroup;
 			children = (
 				F09D585F2AD3DA0100D7FBF6 /* Infrastructure */,
@@ -447,10 +447,10 @@
 				F09FE2BB2AD50AFC00AEE3CB /* ImageCommentsMapper.swift */,
 				F017E7A12A43665B00644EA4 /* HTTPClient.swift */,
 			);
-			path = FeedAPI;
+			path = "Feed API";
 			sourceTree = "<group>";
 		};
-		F0356FB72A582FBF00E01113 /* FeedCache */ = {
+		F0356FB72A582FBF00E01113 /* Feed Cache */ = {
 			isa = PBXGroup;
 			children = (
 				F0E72F712A8D0AE50095610D /* Infrastructure */,
@@ -462,7 +462,7 @@
 				F0DBCC5A2AAA145D00DB580F /* LocalFeedImageDataLoader.swift */,
 				F0DBCC572AAA143A00DB580F /* FeedImageDataStore.swift */,
 			);
-			path = FeedCache;
+			path = "Feed Cache";
 			sourceTree = "<group>";
 		};
 		F07486952AA594EE00916310 /* Helpers */ = {
