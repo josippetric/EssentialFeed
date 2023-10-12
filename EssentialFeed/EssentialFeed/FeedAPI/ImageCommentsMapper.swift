@@ -13,7 +13,7 @@ internal final class ImageCommentsMapper {
 	}
 
 	internal static func map(_ data: Data, from response: HTTPURLResponse) throws -> [RemoteFeedItem] {
-		guard ImageCommentsMapper.isOK(response),
+		guard isOK(response),
 				let root = try? JSONDecoder().decode(Root.self, from: data) else {
 			throw RemoteImageCommentsLoader.Error.invalidData
 		}
