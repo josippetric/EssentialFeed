@@ -327,6 +327,7 @@
 				F09FE2C12AD7D96E00AEE3CB /* Shared API Infra */,
 				F026C4672A3C8AC20052E736 /* Feed API */,
 				F0356FB72A582FBF00E01113 /* Feed Cache */,
+				F09FE2C72AD7DAA800AEE3CB /* Image Comments API */,
 				F07486B02AA5D96A00916310 /* Feed Presentation */,
 				F0037D292A3AC11000FC2268 /* Feed Feature */,
 				F09FE2BD2AD7A70900AEE3CB /* Image Comments Feature */,
@@ -346,6 +347,7 @@
 				F09FE2C62AD7DA1A00AEE3CB /* Shared API Infra */,
 				F017E7A62A436C9300644EA4 /* FeedAPI */,
 				F01084852A56E684005CF803 /* FeedCache */,
+				F09FE2C82AD7DAE200AEE3CB /* Image Comments API */,
 				F0F97A352AA2049E0017A1BE /* FeedPresentation */,
 				F0227F752A49D05C0020E932 /* Helpers */,
 			);
@@ -412,7 +414,6 @@
 			children = (
 				F0037D2C2A3AC43B00FC2268 /* LoadFeedFromRemoteUseCaseTests.swift */,
 				F0374E362AA83239007A77A7 /* LoadFeedImageDataFromRemoteUseCaseTests.swift */,
-				F0C81B4A2AD5084F007C6CA4 /* LoadImageCommentsFromRemoteUseCaseTests.swift */,
 			);
 			path = FeedAPI;
 			sourceTree = "<group>";
@@ -443,8 +444,6 @@
 				F017E7A42A43669800644EA4 /* FeedItemsMapper.swift */,
 				F0EB21832A6569F4004D0D8D /* RemoteFeedItem.swift */,
 				F08069872AA98BF7009ED8B2 /* RemoteFeedImageDataLoader.swift */,
-				F09FE2B92AD50A4E00AEE3CB /* RemoteImageCommentsLoader.swift */,
-				F09FE2BB2AD50AFC00AEE3CB /* ImageCommentsMapper.swift */,
 			);
 			path = "Feed API";
 			sourceTree = "<group>";
@@ -554,6 +553,23 @@
 				F02530442A46A8B800D2D624 /* URLSessionHTTPClientTests.swift */,
 			);
 			path = "Shared API Infra";
+			sourceTree = "<group>";
+		};
+		F09FE2C72AD7DAA800AEE3CB /* Image Comments API */ = {
+			isa = PBXGroup;
+			children = (
+				F09FE2B92AD50A4E00AEE3CB /* RemoteImageCommentsLoader.swift */,
+				F09FE2BB2AD50AFC00AEE3CB /* ImageCommentsMapper.swift */,
+			);
+			path = "Image Comments API";
+			sourceTree = "<group>";
+		};
+		F09FE2C82AD7DAE200AEE3CB /* Image Comments API */ = {
+			isa = PBXGroup;
+			children = (
+				F0C81B4A2AD5084F007C6CA4 /* LoadImageCommentsFromRemoteUseCaseTests.swift */,
+			);
+			path = "Image Comments API";
 			sourceTree = "<group>";
 		};
 		F0A0E9FA2ABC302300A06FB3 /* Helpers */ = {
