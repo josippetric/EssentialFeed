@@ -80,4 +80,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	}
 }
 
-extension RemoteLoader: FeedLoader where Resource == [FeedImage] {}
+// We don't need this any more since we have used combine to compose the architecture
+// without using the RemoteLoader
+// extension RemoteLoader: FeedLoader where Resource == [FeedImage] {}
