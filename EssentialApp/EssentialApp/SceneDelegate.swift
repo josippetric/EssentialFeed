@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 import CoreData
 import EssentialFeed
 
@@ -53,7 +54,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		localFeedLoader.validateCache { _ in }
 	}
 	
-	private func makeRemoteFeedLoaderWithLocalFallback() -> FeedLoader.Publisher {
+	private func makeRemoteFeedLoaderWithLocalFallback() -> AnyPublisher<[FeedImage], Error> {
 		let remoteURL = URL(string: "https://ile-api.essentialdeveloper.com/essential-feed/v1/feed")!
 		// If not using combine we can create remote feed loader using the RemoteLoader, otherwise we can
 		// even use universal abstractions in the Combine to not use RemoteLoader at all
