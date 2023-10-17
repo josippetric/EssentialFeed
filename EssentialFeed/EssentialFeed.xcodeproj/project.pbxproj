@@ -55,7 +55,7 @@
 		F07486B22AA5D98100916310 /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07486B12AA5D98100916310 /* FeedPresenter.swift */; };
 		F07486B32AA5DA5C00916310 /* Feed.strings in Resources */ = {isa = PBXBuildFile; fileRef = F07486AD2AA5D6C100916310 /* Feed.strings */; };
 		F07486B52AA5DA9D00916310 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07486B42AA5DA9D00916310 /* FeedViewModel.swift */; };
-		F07486B72AA5DAB600916310 /* FeedLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07486B62AA5DAB600916310 /* FeedLoadingViewModel.swift */; };
+		F07486B72AA5DAB600916310 /* ResourceLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07486B62AA5DAB600916310 /* ResourceLoadingViewModel.swift */; };
 		F07486B92AA5DACA00916310 /* FeedErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07486B82AA5DACA00916310 /* FeedErrorViewModel.swift */; };
 		F07486BA2AA5DC3700916310 /* FeedLocalisationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F046DCF42A9DDF9900FA1E53 /* FeedLocalisationTests.swift */; };
 		F07744CB2A4C552800991C0F /* EssentialFeedAPIEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07744CA2A4C552800991C0F /* EssentialFeedAPIEndToEndTests.swift */; };
@@ -104,6 +104,7 @@
 		F0FF87232ADE9EEB004E0050 /* Shared.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0FF87252ADE9EEB004E0050 /* Shared.strings */; };
 		F0FF87292ADEA07C004E0050 /* SharedLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF87282ADEA07C004E0050 /* SharedLocalizationTests.swift */; };
 		F0FF872B2ADEA4B7004E0050 /* SharedLocalizationTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF872A2ADEA4B7004E0050 /* SharedLocalizationTestHelpers.swift */; };
+		F0FF872D2ADEB60E004E0050 /* ResourceLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF872C2ADEB60E004E0050 /* ResourceLoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,7 +197,7 @@
 		F07486AF2AA5D6C600916310 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Feed.strings"; sourceTree = "<group>"; };
 		F07486B12AA5D98100916310 /* FeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenter.swift; sourceTree = "<group>"; };
 		F07486B42AA5DA9D00916310 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
-		F07486B62AA5DAB600916310 /* FeedLoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoadingViewModel.swift; sourceTree = "<group>"; };
+		F07486B62AA5DAB600916310 /* ResourceLoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingViewModel.swift; sourceTree = "<group>"; };
 		F07486B82AA5DACA00916310 /* FeedErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedErrorViewModel.swift; sourceTree = "<group>"; };
 		F07744C32A4C537700991C0F /* EssentialFeed.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EssentialFeed.xctestplan; sourceTree = "<group>"; };
 		F07744C82A4C552800991C0F /* EssentialFeedAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,6 +251,7 @@
 		F0FF87272ADE9EEF004E0050 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Shared.strings"; sourceTree = "<group>"; };
 		F0FF87282ADEA07C004E0050 /* SharedLocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocalizationTests.swift; sourceTree = "<group>"; };
 		F0FF872A2ADEA4B7004E0050 /* SharedLocalizationTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocalizationTestHelpers.swift; sourceTree = "<group>"; };
+		F0FF872C2ADEB60E004E0050 /* ResourceLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -487,6 +489,8 @@
 			isa = PBXGroup;
 			children = (
 				F055338D2ADE43010034006F /* LoadResourcePresenter.swift */,
+				F0FF872C2ADEB60E004E0050 /* ResourceLoadingView.swift */,
+				F07486B62AA5DAB600916310 /* ResourceLoadingViewModel.swift */,
 				F0FF87252ADE9EEB004E0050 /* Shared.strings */,
 			);
 			path = "Shared Presentation";
@@ -506,7 +510,6 @@
 				F07486B12AA5D98100916310 /* FeedPresenter.swift */,
 				F07486AD2AA5D6C100916310 /* Feed.strings */,
 				F07486B42AA5DA9D00916310 /* FeedViewModel.swift */,
-				F07486B62AA5DAB600916310 /* FeedLoadingViewModel.swift */,
 				F07486B82AA5DACA00916310 /* FeedErrorViewModel.swift */,
 				F0C96C192AA6E9BD00718B11 /* FeedImagePresenter.swift */,
 				F0C96C1B2AA6EA3E00718B11 /* FeedImageViewModel.swift */,
@@ -975,13 +978,14 @@
 				F055338E2ADE43010034006F /* LoadResourcePresenter.swift in Sources */,
 				F08069882AA98BF7009ED8B2 /* RemoteFeedImageDataLoader.swift in Sources */,
 				F0E72F752A8D0BF00095610D /* CoreDataHelpers.swift in Sources */,
-				F07486B72AA5DAB600916310 /* FeedLoadingViewModel.swift in Sources */,
+				F07486B72AA5DAB600916310 /* ResourceLoadingViewModel.swift in Sources */,
 				F0037D282A3AC05700FC2268 /* FeedLoader.swift in Sources */,
 				F07A6D9C2AAAD96A008D19BB /* CoreDataFeedStore+FeedStore.swift in Sources */,
 				F06AB8302A82A18F00BC6599 /* CoreDataFeedStore.swift in Sources */,
 				F0E72F772A8D0CDD0095610D /* ManagedCache.swift in Sources */,
 				F07486B52AA5DA9D00916310 /* FeedViewModel.swift in Sources */,
 				F029274E2AB2EF2B00CC5D33 /* FeedCache.swift in Sources */,
+				F0FF872D2ADEB60E004E0050 /* ResourceLoadingView.swift in Sources */,
 				F0C96C1C2AA6EA3E00718B11 /* FeedImageViewModel.swift in Sources */,
 				F0374E352AA82E20007A77A7 /* FeedImageDataLoader.swift in Sources */,
 				F0DBCC5B2AAA145D00DB580F /* LocalFeedImageDataLoader.swift in Sources */,
