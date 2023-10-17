@@ -101,6 +101,8 @@
 		F0F2FD212A7E62AA006ED44C /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F2FD202A7E62AA006ED44C /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift */; };
 		F0F50F9B2AA9E19D00E43DD0 /* LoadFeedImageDataFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F50F9A2AA9E19D00E43DD0 /* LoadFeedImageDataFromCacheUseCaseTests.swift */; };
 		F0F97A382AA204C70017A1BE /* FeedPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F97A372AA204C70017A1BE /* FeedPresenterTests.swift */; };
+		F0FF87232ADE9EEB004E0050 /* Shared.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0FF87252ADE9EEB004E0050 /* Shared.strings */; };
+		F0FF87292ADEA07C004E0050 /* SharedLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF87282ADEA07C004E0050 /* SharedLocalizationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -242,6 +244,10 @@
 		F0F2FD202A7E62AA006ED44C /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FailableRetrieveFeedStoreSpecs.swift"; sourceTree = "<group>"; };
 		F0F50F9A2AA9E19D00E43DD0 /* LoadFeedImageDataFromCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedImageDataFromCacheUseCaseTests.swift; sourceTree = "<group>"; };
 		F0F97A372AA204C70017A1BE /* FeedPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenterTests.swift; sourceTree = "<group>"; };
+		F0FF87242ADE9EEB004E0050 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Shared.strings; sourceTree = "<group>"; };
+		F0FF87262ADE9EED004E0050 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Shared.strings; sourceTree = "<group>"; };
+		F0FF87272ADE9EEF004E0050 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Shared.strings"; sourceTree = "<group>"; };
+		F0FF87282ADEA07C004E0050 /* SharedLocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocalizationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -469,6 +475,7 @@
 			isa = PBXGroup;
 			children = (
 				F055338A2ADE42470034006F /* LoadResourcePresenterTests.swift */,
+				F0FF87282ADEA07C004E0050 /* SharedLocalizationTests.swift */,
 			);
 			path = "Shared Presentation";
 			sourceTree = "<group>";
@@ -477,6 +484,7 @@
 			isa = PBXGroup;
 			children = (
 				F055338D2ADE43010034006F /* LoadResourcePresenter.swift */,
+				F0FF87252ADE9EEB004E0050 /* Shared.strings */,
 			);
 			path = "Shared Presentation";
 			sourceTree = "<group>";
@@ -902,6 +910,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F07486B32AA5DA5C00916310 /* Feed.strings in Resources */,
+				F0FF87232ADE9EEB004E0050 /* Shared.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -992,6 +1001,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0ED08182AD8F56D004E8B17 /* RemoteLoaderTests.swift in Sources */,
+				F0FF87292ADEA07C004E0050 /* SharedLocalizationTests.swift in Sources */,
 				F088AFCC2A7E5AA100F0BF95 /* CodableFeedStoreTests.swift in Sources */,
 				F0A63B9A2A7E6339009B7B09 /* XCTestCase+FailableDeleteFeedStoreSpecs.swift in Sources */,
 				F0C81B4B2AD5084F007C6CA4 /* ImageCommentsMapperTests.swift in Sources */,
@@ -1112,6 +1122,16 @@
 				F07486AF2AA5D6C600916310 /* pt-PT */,
 			);
 			name = Feed.strings;
+			sourceTree = "<group>";
+		};
+		F0FF87252ADE9EEB004E0050 /* Shared.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0FF87242ADE9EEB004E0050 /* el */,
+				F0FF87262ADE9EED004E0050 /* en */,
+				F0FF87272ADE9EEF004E0050 /* pt-PT */,
+			);
+			name = Shared.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
