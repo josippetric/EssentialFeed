@@ -103,6 +103,7 @@
 		F0F97A382AA204C70017A1BE /* FeedPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F97A372AA204C70017A1BE /* FeedPresenterTests.swift */; };
 		F0FF87232ADE9EEB004E0050 /* Shared.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0FF87252ADE9EEB004E0050 /* Shared.strings */; };
 		F0FF87292ADEA07C004E0050 /* SharedLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF87282ADEA07C004E0050 /* SharedLocalizationTests.swift */; };
+		F0FF872B2ADEA4B7004E0050 /* SharedLocalizationTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF872A2ADEA4B7004E0050 /* SharedLocalizationTestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -248,6 +249,7 @@
 		F0FF87262ADE9EED004E0050 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Shared.strings; sourceTree = "<group>"; };
 		F0FF87272ADE9EEF004E0050 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Shared.strings"; sourceTree = "<group>"; };
 		F0FF87282ADEA07C004E0050 /* SharedLocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocalizationTests.swift; sourceTree = "<group>"; };
+		F0FF872A2ADEA4B7004E0050 /* SharedLocalizationTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocalizationTestHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -433,6 +435,7 @@
 			children = (
 				F0227F762A49D08B0020E932 /* XCTestCase+MemoryLeakTracking.swift */,
 				F05B88102A67A98600EFBC6C /* SharedTestHelpers.swift */,
+				F0FF872A2ADEA4B7004E0050 /* SharedLocalizationTestHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1000,6 +1003,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0FF872B2ADEA4B7004E0050 /* SharedLocalizationTestHelpers.swift in Sources */,
 				F0ED08182AD8F56D004E8B17 /* RemoteLoaderTests.swift in Sources */,
 				F0FF87292ADEA07C004E0050 /* SharedLocalizationTests.swift in Sources */,
 				F088AFCC2A7E5AA100F0BF95 /* CodableFeedStoreTests.swift in Sources */,

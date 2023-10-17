@@ -25,3 +25,4 @@ extension HTTPURLResponse {
 		self.init(url: anyURL(), statusCode: statusCode, httpVersion: nil, headerFields: nil)!
 	}
 }
+
