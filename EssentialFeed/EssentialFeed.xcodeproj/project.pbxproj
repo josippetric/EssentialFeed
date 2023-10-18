@@ -45,6 +45,7 @@
 		F04935992A82A4B000253238 /* FeedStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F04935972A82A4B000253238 /* FeedStore.xcdatamodeld */; };
 		F04CDF832ADFEC0B00FE24A5 /* ImageComments.strings in Resources */ = {isa = PBXBuildFile; fileRef = F04CDF852ADFEC0B00FE24A5 /* ImageComments.strings */; };
 		F04CDF892ADFECD600FE24A5 /* ImageCommentsLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04CDF882ADFECD600FE24A5 /* ImageCommentsLocalizationTests.swift */; };
+		F04CDF8B2AE004FC00FE24A5 /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05B88102A67A98600EFBC6C /* SharedTestHelpers.swift */; };
 		F04F9FF32A7E5C2F00158909 /* FeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F9FF22A7E5C2F00158909 /* FeedStoreSpecs.swift */; };
 		F055338B2ADE42470034006F /* LoadResourcePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F055338A2ADE42470034006F /* LoadResourcePresenterTests.swift */; };
 		F055338E2ADE43010034006F /* LoadResourcePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F055338D2ADE43010034006F /* LoadResourcePresenter.swift */; };
@@ -1124,6 +1125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F04CDF8B2AE004FC00FE24A5 /* SharedTestHelpers.swift in Sources */,
 				F07744CB2A4C552800991C0F /* EssentialFeedAPIEndToEndTests.swift in Sources */,
 				F0C02F2D2ADFEAEC00D12553 /* FeedPresenterTests.swift in Sources */,
 				F07744D22A4C64FF00991C0F /* XCTestCase+MemoryLeakTracking.swift in Sources */,
