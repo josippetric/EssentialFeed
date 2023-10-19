@@ -8,7 +8,7 @@
 import UIKit
 import EssentialFeed
 
-public protocol CellControllerProtocol {
+public protocol ListCellController {
 	func view(in tableView: UITableView) -> UITableViewCell
 	func preload()
 	func cancelLoad()
@@ -19,9 +19,9 @@ final public class ListViewController: UITableViewController, UITableViewDataSou
 	
 	public var onRefresh: (() -> Void)?
 
-	private var loadingControllers = [IndexPath: CellControllerProtocol]()
+	private var loadingControllers = [IndexPath: ListCellController]()
 	
-	private var tableModel: [CellControllerProtocol] = [] {
+	private var tableModel: [ListCellController] = [] {
 		didSet { tableView.reloadData() }
 	}
 	
@@ -58,7 +58,7 @@ final public class ListViewController: UITableViewController, UITableViewDataSou
 		indexPaths.forEach(cancelCellControllerLoad)
 	}
 	
-	private func cellController(forRowAt indexPath: IndexPath) -> CellControllerProtocol {
+	private func cellController(forRowAt indexPath: IndexPath) -> ListCellController {
 		let controller = tableModel[indexPath.row]
 		loadingControllers[indexPath] = controller
 		return controller
@@ -73,7 +73,7 @@ final public class ListViewController: UITableViewController, UITableViewDataSou
 		onRefresh?()
 	}
 	
-	public func display(_ viewControllers: [CellControllerProtocol]) {
+	public func display(_ viewControllers: [ListCellController]) {
 		loadingControllers = [:]
 		tableModel = viewControllers
 	}

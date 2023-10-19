@@ -13,7 +13,7 @@ public protocol FeedImageCellControllerDelegate {
 	func didCancelImageRequest()
 }
 
-final public class FeedImageCellController: CellControllerProtocol, ResourceView, ResourceLoadingView, ResourceErrorView {
+final public class FeedImageCellController: ListCellController, ResourceView, ResourceLoadingView, ResourceErrorView {
 	public typealias ResourceViewModel = UIImage
 	
 	private let viewModel: FeedImageViewModel

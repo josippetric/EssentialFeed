@@ -40,7 +40,7 @@ final class ListSnapshotTests: XCTestCase {
 		return controller
 	}
 	
-	private func emptyList() -> [CellControllerProtocol] {
+	private func emptyList() -> [ListCellController] {
 		return []
 	}
 }
