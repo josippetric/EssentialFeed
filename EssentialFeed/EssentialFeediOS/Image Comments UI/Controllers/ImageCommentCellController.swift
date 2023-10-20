@@ -17,7 +17,7 @@ public class ImageCommentCellController: NSObject {
 	}
 }
 
-extension ImageCommentCellController: ListCellController {
+extension ImageCommentCellController: UITableViewDataSource {
 	public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		1
 	}
