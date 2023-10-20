@@ -10,6 +10,10 @@ import EssentialFeediOS
 import UIKit
 
 extension ListViewController {
+	func simulateErrorViewTap() {
+		errorView.simulateTap()
+	}
+
 	func simulateUserInitiatedFeedReload() {
 		refreshControl?.simulatePullToRefresh()
 	}
@@ -19,7 +23,7 @@ extension ListViewController {
 	}
 	
 	var errorMessage: String? {
-		return errorView?.message
+		return errorView.message
 	}
 	
 	@discardableResult
