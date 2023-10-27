@@ -87,7 +87,7 @@ import EssentialFeed
 //	private func makeSUT(
 //		mapper: @escaping RemoteLoader<String>.Mapper = { _, _ in "any" },
 //		url: URL = URL(string: "https://a-url.com")!,
-//		file: StaticString = #filePath,
+//		file: StaticString = #filePathPath,
 //		line: UInt = #line
 //	) -> (sut: RemoteLoader<String>, client: HTTPClientSpy) {
 //		let client = HTTPClientSpy()
@@ -127,7 +127,7 @@ import EssentialFeed
 //		_ sut: RemoteLoader<String>,
 //		toCompleteWithResult expectedResult: RemoteLoader<String>.Result,
 //		when action: () -> Void,
-//		file: StaticString = #filePath,
+//		file: StaticString = #filePathPath,
 //		line: UInt = #line)
 //	{
 //		let exp = expectation(description: "Wait for load completion")

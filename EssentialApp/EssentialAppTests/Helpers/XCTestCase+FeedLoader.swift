@@ -11,7 +11,7 @@
 //protocol FeedLoaderTestCase: XCTestCase {}
 //
 //extension FeedLoaderTestCase {
-//	func expect(_ sut: FeedLoader, toCompleteWith expectedResult: FeedLoader.Result, file: StaticString = #filePath, line: UInt = #line) {
+//	func expect(_ sut: FeedLoader, toCompleteWith expectedResult: FeedLoader.Result, file: StaticString = #filePathPath, line: UInt = #line) {
 //		let exp = expectation(description: "Wait for load to complete")
 //		
 //		sut.load { receivedResult in

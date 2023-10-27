@@ -339,7 +339,7 @@ class FeedUIIntegrationTests: XCTestCase {
 	
 	// MARK: - Helpers
 	
-	private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: ListViewController, loader: LoaderSpy) {
+	private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (sut: ListViewController, loader: LoaderSpy) {
 		let loader = LoaderSpy()
 		let sut = FeedUIComposer.feedComposedWith(
 			feedLoader: loader.loadPublisher,
@@ -349,7 +349,7 @@ class FeedUIIntegrationTests: XCTestCase {
 		return (sut, loader)
 	}
 	
-	private func makeImage(description: String? = nil, location: String? = nil, url: URL = URL(string: "http://any-url.com")!, file: StaticString = #file, line: UInt = #line) -> FeedImage {
+	private func makeImage(description: String? = nil, location: String? = nil, url: URL = URL(string: "http://any-url.com")!, file: StaticString = #filePath, line: UInt = #line) -> FeedImage {
 		return FeedImage(id: UUID(), description: description, location: location, url: url)
 	}
 	
@@ -412,7 +412,7 @@ class FeedUIIntegrationTests: XCTestCase {
 		}
 	}
 	
-	private func assertThat(_ sut: ListViewController, isRendering feed: [FeedImage], file: StaticString = #file, line: UInt = #line) {
+	private func assertThat(_ sut: ListViewController, isRendering feed: [FeedImage], file: StaticString = #filePath, line: UInt = #line) {
 		sut.view.enforceLayoutCycle()
 		
 		guard sut.numberOfRenderedFeedImageViews() == feed.count else {
@@ -423,7 +423,7 @@ class FeedUIIntegrationTests: XCTestCase {
 		}
 	}
 	
-	private func assertThat(_ sut: ListViewController, hasViewConfiguredFor image: FeedImage, at index: Int, file: StaticString = #file, line: UInt = #line) {
+	private func assertThat(_ sut: ListViewController, hasViewConfiguredFor image: FeedImage, at index: Int, file: StaticString = #filePath, line: UInt = #line) {
 		let view = sut.feedImageView(at: index)
 		
 		guard let cell = view as? FeedImageCell else {

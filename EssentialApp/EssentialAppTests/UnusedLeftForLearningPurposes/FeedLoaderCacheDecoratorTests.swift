@@ -45,7 +45,7 @@
 //	
 //	// MARK: - Helpers
 //	
-//	private func makeSUT(loaderResult: FeedLoader.Result, cache: CacheSpy = .init(), file: StaticString = #filePath, line: UInt = #line) -> FeedLoader {
+//	private func makeSUT(loaderResult: FeedLoader.Result, cache: CacheSpy = .init(), file: StaticString = #filePathPath, line: UInt = #line) -> FeedLoader {
 //		let loader = FeedLoaderStub(result: loaderResult)
 //		let sut = FeedLoaderCacheDecorator(decoratee: loader, cache: cache)
 //		trackForMemoryLeaks(loader)

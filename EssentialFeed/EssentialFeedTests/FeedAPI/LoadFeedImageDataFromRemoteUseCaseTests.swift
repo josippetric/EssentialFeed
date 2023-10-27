@@ -115,7 +115,7 @@ final class LoadFeedImageDataFromRemoteUseCaseTests: XCTestCase {
 	
 	// MARK: - Helpers
 	
-	private func makeSUT(url: URL = anyURL(), file: StaticString = #file, line: UInt = #line) -> (sut: RemoteFeedImageDataLoader, HTTPClientSpy) {
+	private func makeSUT(url: URL = anyURL(), file: StaticString = #filePath, line: UInt = #line) -> (sut: RemoteFeedImageDataLoader, HTTPClientSpy) {
 		let client = HTTPClientSpy()
 		let sut = RemoteFeedImageDataLoader(client: client)
 		trackForMemoryLeaks(client)
@@ -127,7 +127,7 @@ final class LoadFeedImageDataFromRemoteUseCaseTests: XCTestCase {
 		return .failure(error)
 	}
 	
-	private func expect(_ sut: RemoteFeedImageDataLoader, toCompleteWith expectedResult: FeedImageDataLoader.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
+	private func expect(_ sut: RemoteFeedImageDataLoader, toCompleteWith expectedResult: FeedImageDataLoader.Result, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
 		let url = anyURL()
 		let exp = expectation(description: "Wait for load to complete")
 		
