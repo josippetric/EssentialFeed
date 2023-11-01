@@ -59,7 +59,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	}
 	
 	private func showComments(for image: FeedImage) {
-		let remoteURL = baseURL.appending(path: "/v1/image/\(image.id)/comments")
+		let remoteURL = ImageCommentsEndpoint.get(image.id).url(baseURL: baseURL)
 		let comments = CommentsUIComposer.commentsComposedWith(commentsLoader: makeRemoteCommentsLoader(url: remoteURL))
 		navigationController.pushViewController(comments, animated: true)
 	}
@@ -74,7 +74,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	}
 	
 	private func makeRemoteFeedLoaderWithLocalFallback() -> AnyPublisher<[FeedImage], Error> {
-		let remoteURL = baseURL.appending(path: "/v1/feed")
+		let remoteURL = FeedEndpoint.get.url(baseURL: baseURL)
 		// If not using combine we can create remote feed loader using the RemoteLoader, otherwise we can
 		// even use universal abstractions in the Combine to not use RemoteLoader at all
 		// let remoteFeedLoader = RemoteLoader<[FeedImage]>(url: remoteURL, client: httpClient, mapper: FeedItemsMapper.map)
